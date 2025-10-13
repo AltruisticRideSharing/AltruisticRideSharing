@@ -20,7 +20,7 @@ This repository contains training, evaluation, and simulation code used to study
 1. Clone this repository and change into the project directory:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/AltruisticRideSharing/AltruisticRideSharing.git
 cd AltruisticRideSharing
 ```
 
