@@ -1,0 +1,11 @@
+tensorflow[and-cuda]
+Pillow
+numpy
+pygame
+gym
+tensorflow-probability
+argparse
+scipy
+matplotlib
+seaborn
+tqdm

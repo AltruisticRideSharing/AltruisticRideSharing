@@ -1,0 +1,16 @@
+# Ignore Python compiled files
+__pycache__/
+
+# Ignore environment files
+venv/
+
+# Ignore system files
+.DS_Store
+
+savedagents/
+
+dataset/dataset_creation/yellow_tripdata_2016-01.csv
+
+/.specstory
+
+/.vscode
