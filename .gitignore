@@ -1,16 +1,23 @@
-# Ignore Python compiled files
+# Python / environments
 __pycache__/
-
-# Ignore environment files
+*.pyc
+*.egg-info/
 venv/
+.venv/
 
-# Ignore system files
+# System and editor files
 .DS_Store
+.vscode/
 
-savedagents/
+# Training outputs (regenerable)
+savedagents*/
+runs*/
+results*/
+logs/
+wandb/
+*_logs/
 
-dataset/dataset_creation/yellow_tripdata_2016-01.csv
-
-/.specstory
-
-/.vscode
+# Data caches and raw downloads
+ars/data/cache/
+dataset/dataset_creation/
+dataset/**/sampling_coverage.png

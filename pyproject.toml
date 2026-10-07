@@ -1,0 +1,59 @@
+[project]
+name = "altruistic-ridesharing"
+version = "0.1.0"
+description = "Altruistic Ride Sharing (ARS): a decentralized peer-to-peer mobility framework with altruism-point incentives and multi-agent reinforcement learning (ORACLE)."
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Divyanshu Singh" },
+]
+
+dependencies = [
+    "tensorflow[and-cuda]",
+    "tensorflow-probability",
+    "tensorboard",
+    # tensorboard still imports pkg_resources, which setuptools>=81 removed
+    "setuptools<81",
+    "wandb",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "optuna",
+    "statsmodels",
+    "pillow",
+    "pygame",
+    "gym",
+    "matplotlib",
+    "seaborn",
+    "plotly",
+    "tqdm",
+    "osmnx",
+    "geopy",
+    "folium",
+    "datasets",
+    "ortools",
+    "ipykernel",
+]
+
+[project.scripts]
+# Console entry points for modules exposing a main(). MARL training:
+# unshared (MADDPG / MAAC) via ars-train, shared (ORACLE) via ars-train-oracle.
+# The evaluation scripts run their logic in a __main__ block; invoke those with
+# `python -m ars.evaluate` / `python -m ars.evaluate_oracle`.
+ars-train = "ars.train:main"
+ars-train-oracle = "ars.train_oracle:main"
+ars-pso = "ars.baselines.run_pso:main"
+ars-or-tools = "ars.baselines.run_or_tools:main"
+ars-gen-dataset = "ars.data.generate_grid_dataset:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ars"]
+
+[tool.uv]
+# uv sync manages dependencies into the active environment (e.g. a conda env
+# providing the Python interpreter), mirroring the reference setup.
